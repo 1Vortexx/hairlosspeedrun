@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Workshop - The Elevator Inventor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .location-header {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .story-content p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .info-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-content {
+            color: #856404;
+            font-size: 0.95rem;
+        }
+
+        .choices-section {
+            margin-top: 2rem;
+        }
+
+        .choices-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        .choice-link {
+            display: block;
+            background-color: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #212529;
+            transition: all 0.2s ease;
+        }
+
+        .choice-link:hover {
+            border-color: #0066cc;
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+
+        .choice-link:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .choice-icon {
+            color: #0066cc;
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        .choice-text {
+            font-weight: 500;
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-building"></i> The Elevator Inventor: An Interactive History</h1>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Back to Start</a>
+        
+        <div class="content-card">
+            <div class="location-header">
+                <i class="fas fa-map-marker-alt"></i> Your Workshop — Six Months Later
+            </div>
+
+            <h2>Building the Safety Brake</h2>
+
+            <div class="story-content">
+                <p>You've spent every spare hour in your small workshop. The concept is straightforward: a wagon spring attached to the platform, held in tension by the lifting rope. If the rope breaks, the spring releases and drives a pair of steel teeth into the vertical guide rails, stopping the platform immediately.</p>
+
+                <p>Your prototype sits before you—crude but functional. You've tested it with sandbags, dropping the platform repeatedly from various heights. Each time, the mechanism engages within inches.</p>
+
+                <p>But sandbags aren't people. Wood splinters when the teeth bite. The sudden stop generates enormous force. You need to test with realistic weight, but you also need money to continue.</p>
+
+                <p>Word of your work has spread. Two opportunities have emerged:</p>
+
+                <p><strong>A local factory owner</strong> offers $200 to install a lift in his warehouse—but he wants it installed next week and doesn't care about safety mechanisms. "Just make it lift loads," he says.</p>
+
+                <p><strong>A New York investor</strong> has written expressing interest in your safety device. He wants to see a public demonstration before committing funds. No immediate payment, but potential for real backing.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">
+                    <i class="fas fa-cogs"></i> Engineering Note
+                </div>
+                <div class="info-box-content">
+                    The safety brake mechanism uses the principle of mechanical advantage. When the rope tension releases, the compressed spring expands rapidly, driving hardened steel teeth outward into wooden guide rails. The friction between steel and wood creates enough resistance to stop a loaded platform, but the sudden deceleration creates forces that can damage both the platform and cargo—or injure passengers.
+                </div>
+            </div>
+
+            <div class="choices-section">
+                <div class="choices-title">What will you do?</div>
+                
+                <a href="factory-install.html" class="choice-link">
+                    <i class="fas fa-industry choice-icon"></i>
+                    <span class="choice-text">Accept the factory contract for immediate income</span>
+                </a>
+
+                <a href="demonstration.html" class="choice-link">
+                    <i class="fas fa-users choice-icon"></i>
+                    <span class="choice-text">Prepare for the public demonstration and seek investment</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Interactive Educational Experience | Based on Historical Events
+    </footer>
+</body>
+</html>
