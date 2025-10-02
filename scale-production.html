@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Production - The Elevator Inventor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .location-header {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .story-content p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .info-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: #155724;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-content {
+            color: #155724;
+            font-size: 0.95rem;
+        }
+
+        .choices-section {
+            margin-top: 2rem;
+        }
+
+        .choices-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        .choice-link {
+            display: block;
+            background-color: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #212529;
+            transition: all 0.2s ease;
+        }
+
+        .choice-link:hover {
+            border-color: #0066cc;
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+
+        .choice-link:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .choice-icon {
+            color: #0066cc;
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        .choice-text {
+            font-weight: 500;
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-building"></i> The Elevator Inventor: An Interactive History</h1>
+    </header>
+
+    <div class="container">
+        <a href="demonstration.html" class="nav-link"><i class="fas fa-arrow-left"></i> Back</a>
+        
+        <div class="content-card">
+            <div class="location-header">
+                <i class="fas fa-map-marker-alt"></i> Otis Manufacturing — Five Years Later
+            </div>
+
+            <h2>Building an Industry</h2>
+
+            <div class="story-content">
+                <p>Your successful demonstration opened doors. With investor backing, you've established Otis Steam Elevator Company. Your factory employs forty workers and produces safety elevators for buildings across New York and beyond.</p>
+
+                <p>The demand is extraordinary. Architects are designing buildings seven, eight, even nine stories tall—heights that would have been impractical just a decade ago. Your elevators make vertical living and working space economically viable for the first time in human history.</p>
+
+                <p>But rapid growth brings new challenges. To meet demand, you've had to train new workers quickly. Quality control is inconsistent. Some installations have experienced mechanical problems—not catastrophic failures, but concerning nonetheless.</p>
+
+                <p>A prestigious developer wants to install your elevators in a new luxury apartment building on Fifth Avenue. It will be the tallest residential building in the city at ten stories. The contract is worth more than all your previous sales combined.</p>
+
+                <p>However, your head engineer has concerns. He believes the current cable system, while adequate for freight and shorter buildings, needs reinforcement for taller passenger applications. The modifications would delay the project by three months and increase costs by 30%.</p>
+
+                <p>The developer is impatient. He's heard rumors that competitors are developing their own safety elevators. If you can't deliver on schedule, he'll look elsewhere.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">
+                    <i class="fas fa-chart-line"></i> The Challenge of Scaling Innovation
+                </div>
+                <div class="info-box-content">
+                    Many inventors struggle with the transition from prototype to production. Manufacturing at scale introduces new problems: maintaining quality, training workers, managing supply chains, and balancing innovation with reliability. The skills required for invention differ from those needed for business management.
+                </div>
+            </div>
+
+            <div class="choices-section">
+                <div class="choices-title">How will you respond to the challenge?</div>
+                
+                <a href="reinforce-safety.html" class="choice-link">
+                    <i class="fas fa-shield-alt choice-icon"></i>
+                    <span class="choice-text">Insist on the safety reinforcements despite the delay and cost</span>
+                </a>
+
+                <a href="meet-deadline.html" class="choice-link">
+                    <i class="fas fa-clock choice-icon"></i>
+                    <span class="choice-text">Meet the deadline with current specifications to secure the contract</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Interactive Educational Experience | Based on Historical Events
+    </footer>
+</body>
+</html>
