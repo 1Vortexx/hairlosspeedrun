@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unstoppable Video</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none; /* hidden until button is clicked */
+    }
+    #startBtn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 28px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      transition: transform 0.15s ease, background 0.2s ease;
+      z-index: 10;
+    }
+    #startBtn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Button -->
+  <button id="startBtn"><i class="fa-solid fa-play"></i> View WebQuest</button>
+  <!-- Video -->
+  <video id="rickvid" loop playsinline>
+    <source src="https://files.catbox.moe/r444sx.mp4" type="video/mp4">
+  </video>
+  <!-- Background Audio -->
+  <audio id="bgAudio" loop>
+    <source src="https://files.catbox.moe/0gvo0s.mp3" type="audio/mpeg">
+    <!-- Replace the src above with your actual audio file URL -->
+  </audio>
+  <script>
+    const btn = document.getElementById("startBtn");
+    const vid = document.getElementById("rickvid");
+    const bgAudio = document.getElementById("bgAudio");
+    
+    // Setup audio context for video
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const source = ctx.createMediaElementSource(vid);
+    const gainNode = ctx.createGain();
+    gainNode.gain.value = 2.0; // 200% volume
+    source.connect(gainNode).connect(ctx.destination);
+    
+    // Button click event
+    btn.addEventListener("click", () => {
+      console.log("[Button] View WebQuest clicked.");
+      btn.style.display = "none";       // hide button
+      vid.style.display = "block";      // show video
+      vid.muted = false;
+      
+      ctx.resume().then(() => {
+        // Play video
+        vid.play().then(() => {
+          console.log("[Video] Playing at 200% volume.");
+        }).catch(err => {
+          console.error("[Video] Play failed:", err);
+        });
+        
+        // Play background audio
+        bgAudio.play().then(() => {
+          console.log("[Audio] Background audio playing.");
+        }).catch(err => {
+          console.error("[Audio] Play failed:", err);
+        });
+      });
+    });
+    
+    // Prevent pause on video
+    vid.addEventListener("pause", () => {
+      console.warn("[Video] Paused -> forcing play.");
+      vid.play();
+    });
+    
+    // Prevent pause on background audio
+    bgAudio.addEventListener("pause", () => {
+      console.warn("[Audio] Paused -> forcing play.");
+      bgAudio.play();
+    });
+  </script>
+</body>
+</html>
