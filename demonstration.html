@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Demonstration - The Elevator Inventor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .location-header {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .story-content p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .info-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: #155724;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-content {
+            color: #155724;
+            font-size: 0.95rem;
+        }
+
+        .choices-section {
+            margin-top: 2rem;
+        }
+
+        .choices-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        .choice-link {
+            display: block;
+            background-color: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: #212529;
+            transition: all 0.2s ease;
+        }
+
+        .choice-link:hover {
+            border-color: #0066cc;
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+
+        .choice-link:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .choice-icon {
+            color: #0066cc;
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        .choice-text {
+            font-weight: 500;
+        }
+
+        .nav-link {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-building"></i> The Elevator Inventor: An Interactive History</h1>
+    </header>
+
+    <div class="container">
+        <a href="workshop.html" class="nav-link"><i class="fas fa-arrow-left"></i> Back</a>
+        
+        <div class="content-card">
+            <div class="location-header">
+                <i class="fas fa-map-marker-alt"></i> Crystal Palace Exhibition Hall, New York — 1854
+            </div>
+
+            <h2>The Demonstration That Changed Everything</h2>
+
+            <div class="story-content">
+                <p>You stand on a hoisting platform suspended forty feet above the exhibition hall floor. Below, hundreds of spectators crane their necks upward. Investors, factory owners, journalists, and the merely curious have gathered to witness your demonstration.</p>
+
+                <p>Your safety elevator is mounted on tall guide rails. The platform holds several heavy barrels to simulate cargo weight. You've explained the mechanism: wagon springs under tension, steel safety pawls, guide rails with notched teeth.</p>
+
+                <p>The crowd is skeptical. Elevators fail. Ropes break. People die. That's simply how things are.</p>
+
+                <p>"Gentlemen," you call down, your voice echoing through the hall. You hold up an axe. "I will now demonstrate the safety of this apparatus."</p>
+
+                <p>Your assistant begins cranking the platform higher. At the apex, you raise the axe and bring it down sharply on the hoisting rope.</p>
+
+                <p>The rope parts with a sharp crack. The platform drops—six inches—and stops dead. The safety pawls have engaged instantly, biting into the guide rails. You stand steady, arms crossed, as gasps rise from the crowd.</p>
+
+                <p>"All safe, gentlemen," you announce.</p>
+
+                <p>The hall erupts in applause. Journalists scribble frantically in notebooks. An investor pushes through the crowd toward you, calling out for a meeting.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">
+                    <i class="fas fa-landmark"></i> Historical Note
+                </div>
+                <div class="info-box-content">
+                    This demonstration at the 1854 World's Fair in New York's Crystal Palace is one of the most famous moments in engineering history. Elisha Otis's dramatic presentation proved that passenger elevators could be safe. Within a decade, his company was installing elevators in buildings across America, enabling the construction of the first skyscrapers and transforming urban architecture forever.
+                </div>
+            </div>
+
+            <div class="choices-section">
+                <div class="choices-title">With investors now interested, what's your next move?</div>
+                
+                <a href="scale-production.html" class="choice-link">
+                    <i class="fas fa-industry choice-icon"></i>
+                    <span class="choice-text">Focus on manufacturing and selling as many elevators as possible</span>
+                </a>
+
+                <a href="improve-design.html" class="choice-link">
+                    <i class="fas fa-drafting-compass choice-icon"></i>
+                    <span class="choice-text">Continue refining the design for passenger comfort and additional safety</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Interactive Educational Experience | Based on Historical Events
+    </footer>
+</body>
+</html>
