@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Fall of the Berlin Wall | History</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", "Helvetica", sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* History Channel Style Header */
+      .top-bar {
+        background: #000;
+        border-bottom: 3px solid #d4a017;
+        padding: 15px 0;
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 2em;
+        font-weight: bold;
+        color: #d4a017;
+        letter-spacing: 2px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #d4a017;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 600px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/></svg>');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 4em;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 900;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.5em;
+        color: #d4a017;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .hero-content p {
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      /* Main Content Area */
+      .content-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .section-title {
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #d4a017;
+        font-weight: 900;
+      }
+
+      /* Wall Cross-Section */
+      .wall-diagram {
+        background: #1a1a1a;
+        padding: 40px;
+        border-radius: 10px;
+        margin: 40px 0;
+        border: 2px solid #333;
+      }
+
+      .wall-cross-section {
+        position: relative;
+        height: 500px;
+        background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 100%);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        border: 2px solid #444;
+        overflow: hidden;
+      }
+
+      /* Labels for sides */
+      .side-label {
+        position: absolute;
+        top: 20px;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .side-label.west {
+        left: 20px;
+        color: #4caf50;
+      }
+
+      .side-label.east {
+        right: 20px;
+        color: #f44336;
+      }
+
+      /* The actual wall elements */
+      .wall-structure {
+        display: flex;
+        gap: 150px;
+        align-items: flex-end;
+        position: relative;
+        height: 100%;
+        padding: 50px 0;
+      }
+
+      .wall-element {
+        position: relative;
+      }
+
+      /* West Wall */
+      .west-wall {
+        width: 100px;
+        height: 300px;
+        background: linear-gradient(to right, #666, #888, #666);
+        border: 3px solid #333;
+        position: relative;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .west-wall::before {
+        content: "WEST WALL";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      /* Death Strip */
+      .death-strip-area {
+        width: 150px;
+        height: 50px;
+        background: repeating-linear-gradient(
+          45deg,
+          #3a2a1a,
+          #3a2a1a 10px,
+          #4a3520 10px,
+          #4a3520 20px
+        );
+        border-top: 3px dashed #ff0000;
+        border-bottom: 3px dashed #ff0000;
+        position: relative;
+        align-self: flex-end;
+      }
+
+      .death-strip-label {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff0000;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+        letter-spacing: 1px;
+      }
+
+      /* East Wall */
+      .east-wall {
+        width: 100px;
+        height: 300px;
+        background: linear-gradient(to right, #666, #888, #666);
+        border: 3px solid #333;
+        position: relative;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .east-wall::before {
+        content: "EAST WALL";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      /* Guard Tower */
+      .guard-tower {
+        position: absolute;
+        right: -80px;
+        bottom: 0;
+        width: 70px;
+        height: 200px;
+        background: #2a2a2a;
+        border: 2px solid #444;
+      }
+
+      .guard-tower::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -20px;
+        width: 110px;
+        height: 60px;
+        background: #333;
+        border: 2px solid #444;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+      }
+
+      .guard-tower::after {
+        content: "\f007";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #d4a017;
+        font-size: 20px;
+      }
+
+      /* Barbed Wire */
+      .barbed-wire {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        height: 15px;
+        background: repeating-linear-gradient(
+          90deg,
+          #555 0px,
+          #777 2px,
+          #555 4px
+        );
+        border-top: 2px solid #333;
+        border-bottom: 2px solid #333;
+      }
+
+      .barbed-wire::after {
+        content: "\f714";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 20%;
+        top: -5px;
+        color: #888;
+        font-size: 10px;
+      }
+
+      /* Graffiti on west wall */
+      .graffiti {
+        position: absolute;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        font-size: 18px;
+      }
+
+      .graffiti-1 {
+        top: 30%;
+        left: -80px;
+        color: #ff4444;
+        transform: rotate(-15deg);
+      }
+
+      .graffiti-2 {
+        top: 50%;
+        left: -100px;
+        color: #44ff44;
+        transform: rotate(10deg);
+      }
+
+      .graffiti-3 {
+        top: 70%;
+        left: -90px;
+        color: #ffff44;
+        transform: rotate(-5deg);
+      }
+
+      /* Mines in death strip */
+      .mine {
+        position: absolute;
+        bottom: 10px;
+        width: 15px;
+        height: 15px;
+        background: #666;
+        border-radius: 50%;
+        border: 2px solid #444;
+      }
+
+      .mine::after {
+        content: "\f1e2";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ff0000;
+        font-size: 8px;
+      }
+
+      /* Stats Bar */
+      .stats-bar {
+        background: #d4a017;
+        padding: 30px 20px;
+        margin: 40px 0;
+      }
+
+      .stats-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+
+      .stat-item {
+        color: #000;
+      }
+
+      .stat-number {
+        font-size: 3em;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Content Sections */
+      .content-section {
+        background: #1a1a1a;
+        padding: 60px 40px;
+        margin: 40px 0;
+        border-left: 5px solid #d4a017;
+      }
+
+      .content-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 900;
+      }
+
+      .content-section h2 i {
+        color: #d4a017;
+        margin-right: 15px;
+      }
+
+      .content-section p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #ccc;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding: 40px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #d4a017;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin: 40px 0;
+        padding-left: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #333;
+      }
+
+      .timeline-item:last-child {
+        border-bottom: none;
+      }
+
+      .timeline-icon {
+        position: absolute;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: #d4a017;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #000;
+        font-weight: bold;
+        box-shadow: 0 0 0 5px #000;
+      }
+
+      .timeline-date {
+        font-size: 1.3em;
+        color: #d4a017;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .timeline-content {
+        font-size: 1.05em;
+        line-height: 1.7;
+        color: #ccc;
+      }
+
+      /* Cards Grid */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .card {
+        background: #0a0a0a;
+        border: 2px solid #333;
+        padding: 30px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #d4a017;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+      .card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card:hover {
+        border-color: #d4a017;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+      }
+
+      .card-icon {
+        font-size: 2.5em;
+        color: #d4a017;
+        margin-bottom: 20px;
+      }
+
+      .card h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 900;
+      }
+
+      .card p {
+        line-height: 1.7;
+        color: #ccc;
+      }
+
+      /* Quote Section */
+      .quote-section {
+        background: #d4a017;
+        padding: 60px 40px;
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quote-section::before {
+        content: "\f10d";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        font-size: 15em;
+        color: rgba(0, 0, 0, 0.05);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .quote-text {
+        font-size: 2em;
+        font-weight: 900;
+        color: #000;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .quote-author {
+        font-size: 1.2em;
+        color: #222;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Image Placeholder */
+      .image-placeholder {
+        width: 100%;
+        height: 400px;
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+        border: 2px solid #444;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-placeholder::before {
+        content: "\f03e";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 5em;
+        color: #444;
+      }
+
+      .image-caption {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #ccc;
+      }
+
+      /* Footer */
+      .footer {
+        background: #000;
+        padding: 40px 20px;
+        text-align: center;
+        border-top: 3px solid #d4a017;
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .footer p {
+        margin: 10px 0;
+        color: #888;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5em;
+        }
+
+        .wall-structure {
+          gap: 80px;
+        }
+
+        .west-wall,
+        .east-wall {
+          width: 60px;
+          height: 200px;
+        }
+
+        .death-strip-area {
+          width: 80px;
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-item {
+          padding-left: 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="top-bar">
+      <div class="header-container">
+        <div class="logo"><i class="fas fa-landmark"></i> HISTORY</div>
+        <div class="nav-links">
+          <a href="#timeline"><i class="fas fa-clock"></i> Timeline</a>
+          <a href="#wall"><i class="fas fa-building"></i> The Wall</a>
+          <a href="#escapes"><i class="fas fa-running"></i> Escapes</a>
+          <a href="#impact"><i class="fas fa-globe"></i> Impact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="subtitle">November 9, 1989</div>
+        <h1>The Fall of the Berlin Wall</h1>
+        <p>
+          After 28 years of division, the concrete barrier that symbolized the
+          Cold War came crashing down in one extraordinary night of celebration
+          and freedom
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-number">28</span>
+          <span class="stat-label">Years Standing</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">155</span>
+          <span class="stat-label">Kilometers Long</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">140+</span>
+          <span class="stat-label">Lives Lost</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">302</span>
+          <span class="stat-label">Guard Towers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">75K</span>
+          <span class="stat-label">Imprisoned</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- The Wall Cross-Section -->
+      <div id="wall" class="wall-diagram">
+        <h2 class="section-title">
+          <i class="fas fa-building"></i> The Berlin Wall: Cross-Section
+        </h2>
+        <p style="color: #ccc; margin-bottom: 30px; font-size: 1.1em">
+          The Wall wasn't just a single barrier—it was a complex system of two
+          walls separated by the deadly "No Man's Land"
+        </p>
+
+        <div class="wall-cross-section">
+          <div class="side-label west">
+            <i class="fas fa-flag"></i> WEST BERLIN (FREEDOM)
+          </div>
+          <div class="side-label east">
+            <i class="fas fa-hammer-sickle"></i> EAST BERLIN (COMMUNIST)
+          </div>
+
+          <div class="wall-structure">
+            <!-- West Wall -->
+            <div class="wall-element west-wall">
+              <div class="barbed-wire"></div>
+              <div class="graffiti graffiti-1">FREEDOM</div>
+              <div class="graffiti graffiti-2">NO WALLS!</div>
+              <div class="graffiti graffiti-3">REUNITE</div>
+            </div>
+
+            <!-- Death Strip -->
+            <div class="death-strip-area">
+              <div class="death-strip-label">
+                <i class="fas fa-skull-crossbones"></i> DEATH STRIP
+              </div>
+              <div class="mine" style="left: 20px"></div>
+              <div class="mine" style="left: 60px"></div>
+              <div class="mine" style="left: 100px"></div>
+            </div>
+
+            <!-- East Wall -->
+            <div class="wall-element east-wall">
+              <div class="barbed-wire"></div>
+              <div class="guard-tower"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 30px;
+            padding: 20px;
+            background: #0a0a0a;
+            border: 2px solid #333;
+          "
+        >
+          <h3 style="color: #d4a017; margin-bottom: 15px; font-size: 1.3em">
+            <i class="fas fa-info-circle"></i> The Death Strip Components:
+          </h3>
+          <ul style="list-style: none; padding: 0; color: #ccc; line-height: 2">
+            <li>
+              <i class="fas fa-bomb" style="color: #ff4444"></i>
+              <strong>Anti-vehicle trenches</strong> - Prevented car escapes
+            </li>
+            <li>
+              <i class="fas fa-lightbulb" style="color: #ffd700"></i>
+              <strong>Floodlights</strong> - 24/7 illumination
+            </li>
+            <li>
+              <i class="fas fa-dog" style="color: #d4a017"></i>
+              <strong>Guard dogs</strong> - Patrolled on runs between walls
+            </li>
+            <li>
+              <i class="fas fa-crosshairs" style="color: #ff4444"></i>
+              <strong>Armed guards</strong> - Shoot-on-sight orders
+            </li>
+            <li>
+              <i class="fas fa-explosion" style="color: #ff6b6b"></i>
+              <strong>Land mines</strong> - Hidden throughout the strip
+            </li>
+            <li>
+              <i class="fas fa-video" style="color: #4caf50"></i>
+              <strong>Surveillance</strong> - Constant monitoring from towers
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div id="timeline" class="content-section">
+        <h2><i class="fas fa-clock"></i> Timeline of Division and Freedom</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-hammer"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> August 13, 1961
+            </div>
+            <div class="timeline-content">
+              <strong>Construction Begins:</strong> East German troops begin
+              erecting barbed wire fences overnight, catching Berliners
+              completely by surprise. Within days, the barrier evolves into
+              concrete. Families wake up to find themselves separated from loved
+              ones. Streets are split down the middle. The city is divided.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fas fa-person-running"></i>
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> August 15, 1961
+            </div>
+            <div class="timeline-content">
+              <strong>The Leap to Freedom:</strong> Conrad Schumann, a
+              19-year-old East German border guard, leaps over barbed wire to
+              escape. Photographer Peter Leibing captures the moment in one of
+              the Cold War's most iconic images—a symbol of the desperate desire
+              for freedom.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-skull"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> August 17, 1962
+            </div>
+            <div class="timeline-content">
+              <strong>Peter Fechter's Death:</strong> 18-year-old Peter Fechter
+              is shot while trying to escape near Checkpoint Charlie. He bleeds
+              to death in the death strip as both East German guards and Western
+              forces fail to rescue him. His death shocks the world and becomes
+              a rallying cry against the Wall.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-arrow-down"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> October 3-5, 1964
+            </div>
+            <div class="timeline-content">
+              <strong>Tunnel 57:</strong> The most successful tunnel escape in
+              history. West Berlin students dig 145 meters underground, reaching
+              12 meters deep. Over two nights, 57 people escape to freedom
+              before the tunnel is discovered. One border guard dies in the
+              shootout—later revealed to be from friendly fire.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-microphone"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> June 12, 1987
+            </div>
+            <div class="timeline-content">
+              <strong>Reagan's Challenge:</strong> President Ronald Reagan
+              delivers his historic speech at the Brandenburg Gate: "Mr.
+              Gorbachev, tear down this wall!" The speech resonates globally as
+              the definitive call for the Wall's destruction.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-door-open"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> November 9, 1989 - 10:45 PM
+            </div>
+            <div class="timeline-content">
+              <strong>The Gates Open:</strong> After a confused press conference
+              announcement, thousands rush to checkpoints. Overwhelmed border
+              guard Harald Jäger makes the historic decision to open the gates
+              at Bornholmer Straße. One by one, all checkpoints follow. The Wall
+              has fallen.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-people-group"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> November 9-10, 1989
+            </div>
+            <div class="timeline-content">
+              <strong>The Celebration:</strong> East and West Berliners climb
+              onto the Wall, embracing and celebrating together. "Wall peckers"
+              attack the concrete with hammers and pickaxes. Champagne flows.
+              The party lasts all night. After 28 years, Berlin is united.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fas fa-flag"></i></div>
+            <div class="timeline-date">
+              <i class="far fa-calendar"></i> October 3, 1990
+            </div>
+            <div class="timeline-content">
+              <strong>German Reunification:</strong> Just 339 days after the
+              Wall fell, Germany officially reunifies. The fall of the Berlin
+              Wall triggers the collapse of communist governments across Eastern
+              Europe and marks the beginning of the end of the Cold War.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escape Stories -->
+      <div id="escapes" class="content-section">
+        <h2><i class="fas fa-running"></i> Daring Escape Attempts</h2>
+        <p style="color: #ccc; font-size: 1.1em; margin-bottom: 30px">
+          Between 1961 and 1989, approximately 75,000 people were imprisoned for
+          attempting to escape. More than 140 died trying. But some succeeded
+          through remarkable courage and ingenuity...
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-down-long"></i></div>
+            <h3>Tunnel 57</h3>
+            <p>
+              <strong>October 1964</strong> - Led by 21-year-old engineering
+              student Joachim Neumann, a group of West Berlin students spent 6
+              months digging a tunnel 145 meters long and 12 meters deep. Using
+              simple tools and garden spades, they created the most successful
+              escape route in Wall history. 57 people escaped over two nights
+              before shots were fired and the tunnel was discovered. One border
+              guard died—later revealed to have been accidentally shot by his
+              own colleague.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-person-cane"></i></div>
+            <h3>The Senior Citizens' Tunnel</h3>
+            <p>
+              <strong>1962</strong> - An 81-year-old man wasn't about to let age
+              stop him from freedom. He led a dozen elderly friends in digging a
+              6-foot-tall tunnel from an East Berlin chicken coop for 16 days.
+              When asked about the risky height (taller tunnels are easier to
+              detect), he said he wanted his wife to "see freedom with her head
+              held high." They all made it.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Hot Air Balloon Escape</h3>
+            <p>
+              <strong>September 1979</strong> - Two families constructed a
+              homemade hot-air balloon from curtains and bedsheets. With 8
+              people aboard (including children), they ascended over 2,500
+              meters and floated 28 minutes across the border before landing
+              near Naila, West Germany. This extraordinary escape inspired two
+              films: "Night Crossing" (1982) and "Balloon" (2018).
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-water"></i></div>
+            <h3>Baltic Sea Surfboards</h3>
+            <p>
+              <strong>1987</strong> - Dirk Deckert and Karsten Klünder paddled
+              surfboards through the freezing Baltic Sea for nearly 5 hours,
+              covering 14 kilometers. They fought strong currents, bone-chilling
+              cold, and constant risk of being spotted by patrol boats. When
+              they finally reached West Germany, they were found near death from
+              hypothermia but alive and free.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-plane"></i></div>
+            <h3>The Bethke Brothers</h3>
+            <p>
+              <strong>Multiple Escapes</strong> - Three brothers each escaped
+              using different methods: one floated across the Elbe River on an
+              air mattress, another used a zipline across the Wall, and the
+              third flew an ultralight aircraft. After escaping, two brothers
+              risked everything to return with ultralight planes to rescue their
+              third brother—and succeeded.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-car"></i></div>
+            <h3>Hidden in Vehicles</h3>
+            <p>
+              <strong>Various Years</strong> - Many attempted to hide in car
+              trunks, under seats, or in specially modified compartments. One
+              Syrian businessman successfully smuggled his soon-to-be wife and
+              her two children through Checkpoint Charlie in a custom-built
+              hiding spot. Border guards had sophisticated detection equipment
+              including mirrors on poles and heartbeat sensors, making this
+              method extremely dangerous.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Section -->
+      <div class="quote-section">
+        <div class="quote-text">
+          "We were almost drunk with happiness. We were laughing and crying at
+          the same time. And it really was wonderful."
+        </div>
+        <div class="quote-author">
+          — Helga Unkrodt, East Berlin resident, November 9, 1989
+        </div>
+      </div>
+
+      <!-- The Night It Fell -->
+      <div class="content-section">
+        <h2><i class="fas fa-moon"></i> The Night the Wall Fell</h2>
+
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-microphone-lines"></i></div>
+            <h3>The Mistake That Changed History</h3>
+            <p>
+              At a press conference on November 9, 1989, government spokesman
+              Günter Schabowski was asked when new travel regulations would
+              begin. Shuffling through his notes in confusion, he said
+              "immediately, without delay." This was a mistake—it was supposed
+              to start the next day with proper procedures. But within minutes,
+              the news spread like wildfire across Berlin.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+            <h3>The Rush to Freedom</h3>
+            <p>
+              Thousands of East Berliners rushed to border checkpoints,
+              demanding to cross. West Berliners gathered on the other side with
+              flowers and champagne. At Bornholmer Straße, checkpoint commander
+              Harald Jäger faced an impossible choice: open fire on his own
+              people or open the gates. At 10:45 PM, he chose freedom.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-champagne-glasses"></i>
+            </div>
+            <h3>The Celebration</h3>
+            <p>
+              East and West Berliners climbed onto the Wall, embracing
+              strangers, singing, dancing, and celebrating together. People
+              attacked the Wall with hammers and pickaxes, chipping away pieces
+              as souvenirs. These "wall peckers" (Mauerspechte) became famous.
+              Families separated for 28 years were finally reunited. The party
+              lasted all night.
+            </p>
+          </div>
+        </div>
+
+        <div class="image-placeholder">
+          <div style="text-align: center; color: #666">
+            <i class="fas fa-image"></i>
+            <p style="margin-top: 20px">
+              Historical Photo: People celebrating on top of the Berlin Wall,
+              November 9-10, 1989
+            </p>
+            <p style="font-size: 0.8em">[Getty Images / IWM Collections]</p>
+          </div>
+        </div>
+        <div class="image-caption">
+          East and West Berliners celebrate together on the Wall near the
+          Brandenburg Gate. After 28 years of division, the impossible had
+          become reality—Berlin was united once again.
+        </div>
+      </div>
+
+      <!-- Impact and Legacy -->
+      <div id="impact" class="content-section">
+        <h2><i class="fas fa-globe"></i> Global Impact & Legacy</h2>
+
+        <p
+          style="
+            color: #ccc;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+          "
+        >
+          The fall of the Berlin Wall was one of the most significant events of
+          the 20th century. It wasn't just about reuniting Germany—it symbolized
+          the end of the Cold War and the triumph of freedom over oppression.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+            <h3>Immediate Consequences</h3>
+            <p>
+              <strong>October 3, 1990:</strong> Germany reunified—just 339 days
+              after the Wall fell.<br /><br />
+              <strong>December 1989:</strong> The Cold War officially ended at
+              the Malta Summit.<br /><br />
+              <strong>1989-1991:</strong> Communist governments across Eastern
+              Europe collapsed like dominoes.<br /><br />
+              <strong>1991:</strong> The Soviet Union itself dissolved, ending
+              nearly 50 years of Cold War.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-heart"></i></div>
+            <h3>Symbol of Hope</h3>
+            <p>
+              The Wall's fall became the ultimate symbol of freedom triumphing
+              over oppression. It demonstrated the power of peaceful protest and
+              civil resistance. The images of people celebrating on the Wall, of
+              families reunited after decades, inspired pro-democracy movements
+              worldwide and showed that even the most oppressive regimes could
+              be overcome.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-monument"></i></div>
+            <h3>Remembering Today</h3>
+            <p>
+              Today, only three major Wall sections remain: the East Side
+              Gallery (1.3 km of murals), the Berlin Wall Memorial at Bernauer
+              Straße, and scattered segments. Pieces of the Wall can be found in
+              over 100 locations worldwide—from the UN headquarters to museums
+              in Tokyo—serving as permanent reminders of the cost of division.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 40px;
+            padding: 30px;
+            background: #0a0a0a;
+            border: 3px solid #d4a017;
+          "
+        >
+          <h3
+            style="
+              color: #d4a017;
+              font-size: 1.8em;
+              margin-bottom: 20px;
+              text-align: center;
+            "
+          >
+            <i class="fas fa-quote-left"></i> VOICES FROM THAT NIGHT
+            <i class="fas fa-quote-right"></i>
+          </h3>
+          <div style="display: grid; gap: 20px">
+            <blockquote
+              style="
+                border-left: 4px solid #d4a017;
+                padding-left: 20px;
+                color: #ccc;
+                font-style: italic;
+              "
+            >
+              "This is finally our hour, the hour of freedom."<br />
+              <span style="font-style: normal; font-size: 0.9em; color: #888"
+                >— East German citizen at the border</span
+              >
+            </blockquote>
+            <blockquote
+              style="
+                border-left: 4px solid #d4a017;
+                padding-left: 20px;
+                color: #ccc;
+                font-style: italic;
+              "
+            >
+              "I can't really describe that feeling. Right now, absolute bliss.
+              All the indignity over the years, it's all over."<br />
+              <span style="font-style: normal; font-size: 0.9em; color: #888"
+                >— East German celebrating in West Berlin</span
+              >
+            </blockquote>
+            <blockquote
+              style="
+                border-left: 4px solid #d4a017;
+                padding-left: 20px;
+                color: #ccc;
+                font-style: italic;
+              "
+            >
+              "It's true, they're letting us through."<br />
+              <span style="font-style: normal; font-size: 0.9em; color: #888"
+                >— Helga Unkrodt, moments after crossing</span
+              >
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Stats -->
+      <div class="content-section" style="background: #0a0a0a">
+        <h2><i class="fas fa-chart-line"></i> By The Numbers</h2>
+        <div
+          class="cards-grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))"
+        >
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              28
+            </div>
+            <p>Years, 2 months, 26 days the Wall stood</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              155 km
+            </div>
+            <p>Total length around West Berlin</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              4m
+            </div>
+            <p>Height of the concrete walls</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              302
+            </div>
+            <p>Guard towers by 1989</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              140+
+            </div>
+            <p>People killed attempting to cross</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              75,000
+            </div>
+            <p>Imprisoned for escape attempts</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              ~75
+            </div>
+            <p>Known tunnel escape attempts</p>
+          </div>
+          <div class="card" style="text-align: center">
+            <div style="font-size: 3em; color: #d4a017; font-weight: 900">
+              339
+            </div>
+            <p>Days from fall to reunification</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Quote -->
+    <div class="quote-section">
+      <div class="quote-text" style="font-size: 2.5em">
+        "The Wall has lost its horror, overcome by a peaceful revolution."
+      </div>
+      <div class="quote-author">
+        The Berlin Wall stood for 28 years. It has now been down longer than it
+        stood.<br />
+        May we never forget what was overcome.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-content">
+        <p style="font-size: 1.1em; margin-bottom: 20px; color: #d4a017">
+          <i class="fas fa-landmark"></i> HISTORY
+        </p>
+        <p>
+          Sources: Wikipedia, Imperial War Museum (IWM), Smithsonian Magazine,
+          History.com, Berlin Wall Memorial, National Archives, NATO
+          Declassified Archives
+        </p>
+        <p style="margin-top: 20px">
+          All historical information gathered from publicly available
+          educational sources.
+        </p>
+        <p style="margin-top: 30px; font-size: 0.9em">
+          <i class="fas fa-globe"></i> Learn more at:
+          <a
+            href="https://www.berliner-mauer-gedenkstaette.de"
+            style="color: #d4a017; text-decoration: none"
+            >Berlin Wall Memorial</a
+          >
+          |
+          <a
+            href="https://www.iwm.org.uk"
+            style="color: #d4a017; text-decoration: none"
+            >IWM</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "0";
+            entry.target.style.transform = "translateY(30px)";
+            setTimeout(() => {
+              entry.target.style.transition = "all 0.8s ease-out";
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }, 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all cards and timeline items
+      document.querySelectorAll(".card, .timeline-item").forEach((item) => {
+        observer.observe(item);
+      });
+
+      // Add parallax effect to hero
+      window.addEventListener("scroll", () => {
+        const hero = document.querySelector(".hero");
+        const scrolled = window.pageYOffset;
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+      });
+    </script>
+  </body>
+</html>
